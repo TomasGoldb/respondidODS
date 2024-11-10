@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RespondidODS</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3efff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Encabezado de la página */
+        header {
+            background: linear-gradient(135deg, #8b3dff, #5c27a9);
+            width: 100%;
+            color: white;
+            padding: 40px 20px 60px; /* Espacio extra para los botones */
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Botones de navegación en el encabezado */
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            padding: 12px 20px;
+            background-color: #f5f0ff;
+            color: #8b3dff;
+            font-weight: bold;
+            border: 2px solid #8b3dff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #8b3dff;
+            color: #f5f0ff;
+            border-color: #f5f0ff;
+        }
+
+        /* Contenedor general */
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #8b3dff;
+            margin-bottom: 10px;
+        }
+
+        /* Cards */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+            max-width: 250px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-icon {
+            font-size: 3em;
+            color: #8b3dff;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Botón de llamada a la acción */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #8b3dff;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #5c27a9;
+        }
+
+        /* Sección de palabras en juego */
+        .game-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        .word-card {
+            font-size: 1.8em;
+            color: #5c27a9;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f3efff;
+            border: 2px solid #8b3dff;
+            border-radius: 8px;
+        }
+        .logo{
+            width: 70%;
+        }
+
+        /* Sección de pie de página */
+        footer {
+            background-color: #8b3dff;
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+            margin-top: 4%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado de la página con botones de navegación -->
+    <header>
+        <img class="logo" src="logo.png">
+        <p>Un juego que combina diversión y aprendizaje sobre sostenibilidad, valores comunitarios y los desafíos de nuestro mundo.</p>
+        
+        <!-- Botones de navegación debajo del texto de encabezado -->
+        <div class="header-buttons">
+            <button class="nav-button" onclick="window.location.href='contacto.html'">Contacto</button>
+            <button class="nav-button" onclick="startGame()">Jugar Ahora</button>
+        </div>
+    </header>
+
+    <!-- Sección de objetivos del juego con cards -->
+    <section class="container">
+        <h2>Objetivos del Juego</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3 class="card-title">Conciencia Ambiental</h3>
+                <p class="card-text">Comprender el impacto de nuestras decisiones en el entorno y la sociedad.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3 class="card-title">Exploración Sostenible</h3>
+                <p class="card-text">Explorar temas relacionados con el medio ambiente y el cambio climático.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤝</div>
+                <h3 class="card-title">Colaboración</h3>
+                <p class="card-text">Fomentar el trabajo en equipo y la participación comunitaria.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💡</div>
+                <h3 class="card-title">Inspiración</h3>
+                <p class="card-text">Inspira a los jugadores a actuar positivamente por un mundo mejor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de características del juego con cards -->
+    <section class="container">
+        <h2>Características Destacadas</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">🎴</div>
+                <h3 class="card-title">Cartas Clave</h3>
+                <p class="card-text">Palabras claves que estimulan la creatividad y el debate en cada ronda.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">💬</div>
+                <h3 class="card-title">Dinámicas Grupales</h3>
+                <p class="card-text">Promueve el diálogo y el trabajo en equipo en un ambiente lúdico.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">Temática Actual</h3>
+                <p class="card-text">Basado en temas de sostenibilidad y los Objetivos de Desarrollo Sostenible.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🏫</div>
+                <h3 class="card-title">Adaptabilidad</h3>
+                <p class="card-text">Fácil de adaptar a diferentes contextos educativos y sociales.</p>
+            </div>
+        </div>
+        </section>
+        <footer>
+            <marquee>©RespondidODS - KKL, Bet Hilel</marquee>
+        </footer>
+
+    <!-- JavaScript para la lógica del juego -->
+    <script>
+        // Palabras relacionadas con el juego
+        const words = [
+            "Plantación de árboles", "Conservación del agua", "Innovación agrícola", "Reservorios naturales", 
+            "Bosque comunitario", "Educación ambiental", "Senderismo responsable", "Reciclaje de agua", 
+            "Protección de la fauna", "Proyecto ecológico", "Paz verde", "Desalinización", 
+            "Cuidado del Mar Muerto", "Agricultura en el desierto", "Flora autóctona", "Turismo sustentable", 
+            "Energía renovable", "Valle de Hula", "Protección de la biodiversidad", "Reforestación"
+        ];
+
+        // Función para iniciar el juego
+        function startGame() {
+            document.getElementById("gameSection").style.display = "block";
+            document.querySelector(".cta-button").style.display = "none";
+            nextWord();
+        }
+
+        // Función para mostrar una nueva palabra aleatoria
+        function nextWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            document.getElementById("wordCard").textContent = words[randomIndex];
+        }
+    </script>
+
+</body>
+</html>

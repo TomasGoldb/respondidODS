@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Palabras</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3efff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* Encabezado de la página */
+        header {
+            background: linear-gradient(135deg, #8b3dff, #5c27a9);
+            width: 100%;
+            color: white;
+            padding: 40px 20px 60px; /* Espacio extra para los botones */
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Botones de navegación en el encabezado */
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            padding: 12px 20px;
+            background-color: #f5f0ff;
+            color: #8b3dff;
+            font-weight: bold;
+            border: 2px solid #8b3dff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #8b3dff;
+            color: #f5f0ff;
+            border-color: #f5f0ff;
+        }
+
+        /* Contenedor general */
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #8b3dff;
+            margin-bottom: 10px;
+        }
+
+        /* Sección de juego */
+        .game-section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 30px 0;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .word-card {
+            font-size: 2em;
+            color: #5c27a9;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f3efff;
+            border: 2px solid #8b3dff;
+            border-radius: 8px;
+        }
+
+        /* Botón de acción */
+        .cta-button {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #8b3dff;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #5c27a9;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img class="logo" src="logo.png">
+        <p>Aquí podrás generar palabras para el juego, en caso de no disponer de las cartas de palabras.</p>
+        <div class="header-buttons">
+            <button class="nav-button" onclick="window.location.href='contacto.html'">Contacto</button>
+            <button class="nav-button" onclick="startGame()">Jugar Ahora</button>
+        </div>
+        <!-- Botones de navegación debajo del texto de encabezado -->
+        
+    </header>
+
+    <!-- Sección de juego -->
+    <section class="game-section">
+        <div class="word-card" id="wordDisplay">
+            Haz clic en el botón para ver una palabra.
+        </div>
+        <button class="cta-button" onclick="generateWord()">Generar Palabra</button>
+    </section>
+
+    <script>
+        // Array de palabras
+        const words = [
+            'Desarrollo', 'Innovación', 'Educación', 'Cultura', 'Tecnología', 'Sostenibilidad',
+            'Colaboración', 'Respeto', 'Diversidad', 'Futuro', 'Impacto', 'Cambio', 'Creatividad',
+            'Justicia', 'Solidaridad', 'Comunidad', 'Energía', 'Bienestar', 'Ética', 'Responsabilidad'
+        ];
+
+        // Función para generar palabra aleatoria
+        function generateWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            const word = words[randomIndex];
+            document.getElementById('wordDisplay').textContent = word;
+        }
+    </script>
+
+</body>
+</html>
