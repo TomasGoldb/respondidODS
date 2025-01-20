@@ -1,0 +1,15 @@
+{
+    "palabras": [
+        "hola",
+        "esta",
+        "es",
+        "una",
+        "prueba"
+    ],
+    "respuestas": [
+        {
+            "texto": "hola",
+            "ods": 2
+        }
+    ]
+}
