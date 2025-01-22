@@ -273,6 +273,9 @@ footer {
 .selector .opcion:hover{
     box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.2);
 }
+.selector .opcion:visited{
+    text-decoration: none;
+}
 .selector .opcion img{
     width:  60%;
 }
