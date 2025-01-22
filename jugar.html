@@ -16,7 +16,7 @@
         
     </header>
     <section class="game-section" id="empezar">
-        <button onclick="empezarPartida()">EMPEZAR PARTIDA</button>
+        <button onclick="empezarPartida()" class="cta-button">EMPEZAR PARTIDA</button>
     </section>
     
 
@@ -39,35 +39,17 @@
             generateWord('cartaRespuesta');
         }
 
-        let cartasPalabras=[], cartasRespuestas=[];
+        let cantCartasPalabras=120, cantCartasRespuestas=40, cartasPalabras="cartasPalabrasSimple",cartasRespuestas="cartasRespuestasSimple";
             const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const modo = urlParams.get('modo');
         console.log(modo);
         if(modo=="simple"){
-        //palabras simples:
-        cartasPalabras = [
-           "baseCartaVioleta.png"
-];
-        cartasRespuestas = [
-            "baseCartaVioleta.png"
-];
+        cartasPalabras="cartasPalabrasSimple";
+        cartasRespuestas="cartasRespuestasSimple";
         } else if(modo=="complejo"){
-        //palabras complejas
-        cartasPalabras = [
-           "hola","prueba"
-];
-        cartasRespuestas = [
-            "baseCartaVioleta.png"
-];
-        }else{
-            //por defecto el juego si no tiene modo lo tira como simple; palabras simples:
-            cartasPalabras = [
-           "Comunidad", "Voluntad", "Progreso", "Barrio", "Tradición", "Energía", "Entorno", "Vecindario", "Cultivo", "Ciclo", "Innovación", "Familia", "Futuro", "Herencia", "Vínculo", "Aprendizaje", "Iniciativa", "Valores", "Creatividad", "Talento", "Cooperativa", "Intercambio", "Visión", "Inspiración", "Conexión", "Equilibrio", "Convivencia", "Cuidado", "Tierra", "Alimento", "Recurso", "Reto", "Diversión", "Naturaleza", "Ambiente", "Transparencia", "Solidaridad", "Paz", "Aventura", "Esfuerzo", "Ciclo", "Semilla", "Solidaridad", "Aventura", "Esperanza", "Potencial", "Crecimiento", "Idea", "Contribución", "Colaboración", "Habilidad", "Innovación", "Proyecto", "Hogar", "Vecino", "Diálogo", "Energía", "Movimiento", "Meta", "Herencia", "Propósito", "Frontera", "Proyecto", "Identidad", "Posibilidad", "Logro", "Camino", "Senda", "Espíritu", "Inclusión", "Participación", "Bienestar", "Medio", "Satisfacción", "Herramienta", "Compromiso", "Inspiración", "Generación", "Proyecto", "Cultura", "Historia", "Conocimiento", "Planificación", "Motivación", "Energía", "Creencia", "Sustento", "Iniciativa", "Causa", "Responsabilidad", "Ciudadanía", "Actividad", "Entusiasmo", "Convivencia", "Bien común", "Trabajo", "Alianza", "Seguridad", "Sentido", "Impacto", "Conocimiento", "Innovador", "Idea", "Transformación", "Acción", "Diversidad", "Inclusión", "Cambio", "Empoderamiento", "Cuidado", "Herramienta", "Creatividad", "Apoyo", "Perspectiva", "Ejemplo", "Libertad", "Sabiduría", "Compromiso", "Reconocimiento", "Esfuerzo", "Consenso", "Meta", "Diversión", "Generosidad", "Cosecha", "Autonomía", "Potencial", "Destino", "Realización", "Innovación", "Reflexión", "Valor", "Futuro", "Cultura", "Impulso", "Liderazgo", "Misión", "Impacto", "Compromiso", "Desafío", "Constancia", "Eficiencia", "Felicidad", "Ritmo", "Influencia", "Fusión", "Transformación", "Paz", "Cambio", "Transformación", "Hogar", "Actitud", "Unidad", "Solución", "Realidad", "Sentido", "Abundancia", "Sabiduría", "Equidad", "Solidaridad", "Vocación", "Identidad", "Sostenible", "Visión", "Inspiración", "Éxito", "Progreso", "Equilibrio", "Meta", "Cultura", "Liderazgo", "Creación", "Propósito", "Comunidad", "Aporte", "Convivencia", "Consenso", "Fortaleza", "Experiencia"
-];
-            cartasRespuestas = [
-            "baseCartaVioleta.png"
-];
+        cartasPalabras="cartasPalabrasComplejas";
+        cartasRespuestas="cartasRespuestasComplejas";
         }
         function sigRonda(){
             generateWord('cartaPalabra');
@@ -75,9 +57,15 @@
         }
 
         // Función para generar palabra aleatoria
-        function generateWord(id) {
-            const randomIndex = Math.floor(Math.random() * cartasPalabras.length);
-            const cartaPalabra = cartasPalabras[randomIndex];
+        function generateWord(id, cantCartas) {
+            let cartaPalabra;
+            if(id=='cartaPalabra'){
+            const randomIndex = Math.floor(Math.random() * cantCartasPalabras)+1;
+            cartaPalabra = "/"+cartasPalabras+"/"+randomIndex+".png";
+            } else{
+                const randomIndex = Math.floor(Math.random() * cantCartasRespuestas)+1;
+                cartaPalabra = "/"+cartasRespuestas+"/"+randomIndex+".png";
+            }
             document.getElementById(id).src = cartaPalabra;
         }
     </script>
