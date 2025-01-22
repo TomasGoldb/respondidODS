@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
     <title>Jugar - RespondidODS</title>
 
 </head>
@@ -61,10 +62,10 @@
             let cartaPalabra;
             if(id=='cartaPalabra'){
             const randomIndex = Math.floor(Math.random() * cantCartasPalabras)+1;
-            cartaPalabra = "https://tomasgoldb.github.io/respondidODS/"+cartasPalabras+"/"+randomIndex+".png";
+            cartaPalabra = cartasPalabras+"/"+randomIndex+".png";
             } else{
                 const randomIndex = Math.floor(Math.random() * cantCartasRespuestas)+1;
-                cartaPalabra = "https://tomasgoldb.github.io/respondidODS/"+cartasRespuestas+"/"+randomIndex+".png";
+                cartaPalabra = cartasRespuestas+"/"+randomIndex+".png";
             }
             document.getElementById(id).src = cartaPalabra;
         }
