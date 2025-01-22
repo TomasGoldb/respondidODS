@@ -258,6 +258,7 @@ footer {
     border-radius: 10px;
     padding: 3%;
     background-color: #d1b2ffa8;
+    text-decoration: none;
     width: 45%;
     display: flex
 ;
@@ -265,6 +266,11 @@ footer {
     align-content: center;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s;
+}
+.selector .opcion:hover{
+    box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.2);
 }
 .selector .opcion img{
     width:  60%;
