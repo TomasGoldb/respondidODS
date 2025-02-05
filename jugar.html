@@ -10,18 +10,23 @@
 </head>
 <body>
 
-    <header>
+    <header style="padding-bottom: 20px;">
         <img class="logo" src="logo.png">
-        <p>Un juego que combina diversión y aprendizaje sobre sostenibilidad, valores comunitarios y los desafíos de nuestro mundo.</p>
-  
+        
         
     </header>
     <section class="game-section" id="empezar">
+        <a href="selector.html" style="text-decoration: none;" class="cta-button">VOLVER</a>
         <button onclick="empezarPartida()" class="cta-button">EMPEZAR PARTIDA</button>
     </section>
     
 
     <section class="game-section hidden" id="juego">
+        <div class="contenedor-volver">
+        <a href="selector.html" class="volver">
+            <img src="back.svg">
+        </a>
+    </div>
         <div class="cartas">
         <img src="#" class="carta" id="cartaRespuesta">
         <img src="#" class="carta" id="cartaPalabra">

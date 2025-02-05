@@ -19,7 +19,7 @@ header {
     background: linear-gradient(135deg, #8b3dff, #5c27a9);
     width: 100%;
     color: white;
-    padding: 40px 20px 60px; /* Espacio extra para los botones */
+    padding: 35px 20px 55px; 
     text-align: center;
     position: relative;
 }
@@ -139,6 +139,10 @@ h2 {
         flex-direction: column;
         gap: 10px;
     }
+    .selector .opcion{
+        width: 100% !important;
+        margin-bottom: 10%;
+    }
 }
 
 /* Botón de llamada a la acción */
@@ -153,7 +157,6 @@ h2 {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
 }
 
 .cta-button:hover {
@@ -184,11 +187,24 @@ h2 {
     max-width: 800px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex
+;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex
+;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 200px;
 }
 
 /* Sección de pie de página */
 footer {
-    background-color: #8b3dff;
     color: white;
     padding: 15px 0;
     width: 100%;
@@ -231,7 +247,6 @@ footer {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
 }
 .logo{
     width: 70%;
@@ -334,5 +349,46 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 20px;
   } 
 
+  footer{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  footer .kkl{
+    width: 5%;
+  }
+  footer .litzor{
+    width: 12%;
+  }
+
+  .volver{
+    border-radius: 99999px;
+    display: block;
+    width: 5%;
+    background-color: #8b3dff;
+    padding: 1%;
+    display: flex
+    ;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+    transition: all 0.1s ease-in; 
+    }
+  .volver:hover{
+    transform: scale(1.2);
+    background-color: #7a21ff;
+  }
+  .volver img{
+    width: 80%;
+  }
+  .contenedor-volver{
+    width: 100%;
+  }
