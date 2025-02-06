@@ -16,8 +16,8 @@
         
     </header>
     <section class="game-section" id="empezar">
-        <a href="selector.html" style="text-decoration: none;" class="cta-button">VOLVER</a>
         <button onclick="empezarPartida()" class="cta-button">EMPEZAR PARTIDA</button>
+        <a href="selector.html" style="text-decoration: none;" class="cta-button">VOLVER</a>
     </section>
     
 
@@ -33,7 +33,45 @@
         </div>
         <button class="cta-button" onclick="sigRonda()">SIGUIENTE RONDA</button>
     </section>
-
+    <section class="game-section">
+        <div class="reglas">
+        <h2>Desarrollo del juego:</h2>
+        <h3>1. Inicio de la ronda:</h3>
+        <ul>
+            <li>Un jugador comienza como <b>moderador</b> de la ronda.</li>
+            <li>La plataforma selecciona aleatoriamente dos cartas y muestra una <b>única respuesta</b> en pantalla y una palabra a utilizar.</li>
+            <li>El moderador lee en voz alta la respuesta.</li>
+        </ul>
+        <h3>2. Formulación de preguntas:</h3>
+        <ul>
+            <li>Cada jugador debe escribir una <b>pregunta</b> que tenga sentido con la respuesta mostrada.</li>
+            <li>La pregunta debe incluir la <b>palabra clave</b> que le han sido asignadas al jugador.            </li>
+            <li>Los jugadores tienen un límite de <b>2 minutos</b> para escribir su pregunta en la plataforma.</li>
+        </ul>
+        <h3>3. Selección de la mejor pregunta:</h3>
+        <ul>
+            <li>Una vez finalizado el tiempo, el moderador lee todas las preguntas enviadas.</li>
+            <li>El moderador elige la pregunta más interesante, creativa o adecuada en relación con la respuesta.</li>
+            <li>El jugador que formuló la pregunta seleccionada <b>gana la ronda</b> y <b>recibe un punto</b>.</li>
+        </ul>
+        <h3>4. Cambio de moderador:</h3>
+        <ul>
+            <li>En la siguiente ronda, el jugador a la izquierda del moderador se convierte en el nuevo moderador.</li>
+        </ul>
+        <h3>5. Final del juego:</h3>
+        <ul>
+            <li>El juego termina después de un <b>número acordado de rondas</b> o cuando un jugador llega a <b>3 puntos</b>.</li>
+            <li>El jugador con más puntos al final del juego es declarado ganador.</li>
+        </ul>
+        <h2 style="font-size:1.4lh; margin-top: 3% !important; margin-bottom: 3% !important; text-align: left;">Consejos para formular buenas preguntas:</h2>
+        <ul>
+            <li>Pensar cómo la respuesta encaja en un <b>contexto más amplio</b>.</li>
+            <li>Ser <b>creativo</b> y pensar <b>fuera de la caja</b>.</li>
+            <li>Intentar que la pregunta no sea demasiado obvia ni demasiado difícil.</li>
+        </ul>
+        <h3>¡Buena suerte!</h3>
+        </div>
+    </section>
     <footer>
         <img src="kkl.png" class="kkl">
         <img src="litzor.png" class="litzor">
@@ -50,7 +88,7 @@
             generateWord('cartaRespuesta');
         }
 
-        let cantCartasPalabras=120, cantCartasRespuestas=40, cartasPalabras="cartasPalabrasSimple",cartasRespuestas="cartasRespuestasSimple";
+        let cantCartasPalabras=170, cantCartasRespuestas=40, cartasPalabras="cartasPalabrasSimple",cartasRespuestas="cartasRespuestasSimple";
             const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const modo = urlParams.get('modo');
@@ -61,6 +99,7 @@
         } else if(modo=="complejo"){
         cartasPalabras="cartasPalabrasComplejas";
         cartasRespuestas="cartasRespuestasComplejas";
+        cantCartasPalabras=175;
         }
         function sigRonda(){
             generateWord('cartaPalabra');

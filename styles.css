@@ -198,7 +198,41 @@ h2 {
 .logo{
     width: 70%;
 }
-
+.introduccion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.introduccion div{
+    font-size:1.1lh;
+    text-align: justify;
+    width: 90%;
+}
+.introduccion div p{
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+.introduccion div b{
+    color:#7a21ff;
+}
+.reglas b{
+    color:#7a21ff;
+}
+.reglas{
+    width: 90%;
+    text-align: left;
+}
+.reglas h2{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.reglas h3{
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+.reglas li{
+    margin-bottom: 1.5%;
+}
 .game-section {
     background-color: #ffffff;
     border-radius: 8px;
@@ -245,6 +279,9 @@ footer {
     text-align: center;
 }
 
+#cartaPalabra{
+    clip-path: inset(0 8px 0 0);
+}
 .word-card {
     font-size: 2em;
     color: #5c27a9;
