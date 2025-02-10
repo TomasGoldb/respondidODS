@@ -18,7 +18,7 @@
     
     
 
-    <section class="game-section" id="juego">
+    <section class="game-section hidden" id="juego">
         <div class="contenedor-volver">
         <a href="selector.html" class="volver">
             <img src="back.svg">
@@ -31,18 +31,26 @@
         <button class="cta-button" onclick="sigRonda()">SIGUIENTE RONDA</button>
     </section>
     
-    
+    <section class="game-section" id="empezar">
+        <button onclick="empezarPartida()" class="cta-button">EMPEZAR PARTIDA</button>
+        <a href="selector.html" style="text-decoration: none;" class="cta-button">VOLVER</a>
+    </section>
     <footer>
         <img src="kkl.png" class="kkl">
         <img src="litzor.png" class="litzor">
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
+        function empezarPartida(){
+            let empezar=document.getElementById("empezar");
+            console.log(empezar);
+            let juego=document.getElementById("juego");
+            empezar.classList.add("hidden");
+            juego.className="game-section";
             generateWord('cartaPalabra');
             generateWord('cartaRespuesta');
-        });
-            
+        }
+
         let cantCartasPalabras=170, cantCartasRespuestas=156, cartasPalabras="cartasPalabrasSimple",cartasRespuestas="cartasRespuestasSimple";
             const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
