@@ -163,6 +163,27 @@ h2 {
         width: 100% !important;
         margin-bottom: 10%;
     }
+    .logos-index{
+        display: none !important;
+    }
+    .pes-index{
+        width: 100% !important;
+    }
+    .titulo-selector{
+        width: 80%;
+        text-align: center;
+    }
+    .cartas{
+        flex-direction: column !important;
+    }
+    .carta{
+        width: 70% !important;
+        margin-bottom: 5% !important;
+    }
+    .volver{
+        width: 14% !important;
+        margin-bottom: 5%;
+    }
 }
 
 /* Botón de llamada a la acción */
