@@ -202,12 +202,9 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 88%;
 }
-.introduccion div{
-    font-size:1.1lh;
-    text-align: justify;
-    width: 90%;
-}
+
 .introduccion div p{
     margin-bottom: 2%;
     margin-top: 2%;
@@ -454,4 +451,37 @@ footer {
   }
   .contenedor-volver{
     width: 100%;
+  }
+  .textos-index{
+    display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1lh;
+        text-align: justify;
+        width: 100%;
+  }
+  .textos-index .kkl{
+    width: 100%;
+    margin-bottom: 7%;
+  }
+  .textos-index .litzor{
+    width: 100%;
+  }
+  .logos-index{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 20%;
+    height: 100%;
+
+  }
+  .pes-index{
+    width: 75%;
   }
